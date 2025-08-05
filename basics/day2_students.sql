@@ -20,3 +20,32 @@ SELECT * FROM Students WHERE branch = 'CSE';
 SELECT name, marks FROM Students
 WHERE marks > 75
 ORDER BY marks DESC;
+
+
+SELECT DISTINCT grade FROM Students;
+
+SELECT * FROM Students
+WHERE name LIKE 'S%';
+
+SELECT * FROM Students
+WHERE score IS NULL;
+
+-- Create Departments table
+CREATE TABLE Departments (
+    grade CHAR(1),
+    dept_name VARCHAR(30)
+);
+
+INSERT INTO Departments VALUES
+('A', 'Engineering'),
+('B', 'Marketing'),
+('C', 'HR');
+
+-- Join Students with Departments
+SELECT s.name, s.grade, d.dept_name
+FROM Students s
+JOIN Departments d
+ON s.grade = d.grade;
+
+SELECT * FROM Students
+ORDER BY grade ASC, score DESC;
